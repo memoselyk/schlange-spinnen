@@ -7,5 +7,16 @@ python +
 indeed.com	: http://www.indeed.com/jobs?q=python&l=
 linkedin.com	: http://www.linkedin.com/job/q-python-jobs
 simplyhired.com	: http://www.simplyhired.com/k-python-jobs.html
+simplyhired.co.uk : http://www.simplyhired.co.uk/a/jobs/list/q-python
+simplyhired.mx	: http://www.simplyhired.mx/a/jobs/list/q-python
 totaljobs.com	: http://www.totaljobs.com/JobSearch/Results.aspx?Keywords=python
 stackoverflow.com	: http://careers.stackoverflow.com/jobs/tag/python
+jobs2careers.com	: http://www.jobs2careers.com/results.php?q=python&l=
+pythonweekly.com	: http://jobs.pythonweekly.com/
+technojobs.co.uk	: http://www.technojobs.co.uk/jobs/python
+jobisjob.com.mx	: http://www.jobisjob.com.mx/python/trabajos
+eurojobs.com	: http://www.eurojobs.com/en/candidate/job.html?search%5Bkeyword%5D=python&search%5Bsector%5D=&search%5Bcountry%5D=
+trovit.com.mx	: http://empleo.trovit.com.mx/index.php/cod.search_jobs/what_d.python/
+jobs.net	: http://python.jobs.net/
+careerjet.co.uk	: http://www.careerjet.co.uk/search/jobs?s=python&l=
+pythonjobshq.com	: http://www.pythonjobshq.com/
