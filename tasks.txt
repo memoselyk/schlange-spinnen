@@ -4,6 +4,8 @@ python +
     vhdl
     verilog
 
+computrabajo.com.mx	: http://www.computrabajo.com.mx/bt-ofrlistado.htm?BqdPalabras=python
+occ.com.mx	: https://www.occ.com.mx/Buscar_Empleo/Resultados?bdtype=OCCM&tm=60&q=python&hits=50&page=1&f=true
 indeed.com	: http://www.indeed.com/jobs?q=python&l=
 linkedin.com	: http://www.linkedin.com/job/q-python-jobs
 simplyhired.com	: http://www.simplyhired.com/k-python-jobs.html
