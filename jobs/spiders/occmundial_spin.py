@@ -71,8 +71,18 @@ class OccMundialSpinne(CrawlSpider):
         #item['expireDate']  = None
         item['company']     = content_d.xpath(
                 './/div[@id="tittlejob_jo"]/h3/text()').extract()[0].split(': ', 1)[1]
-        item['location']    = content_d.xpath(
-                './/div[@id="col1_jo"]//dl/dd[4]/text()').extract()[0]
+        # Most of items have the location in 'dl/dd[4]', but that is not guaranteed
+        # to find the location correctly, look each term until the location is found
+        location = ''
+        for n, term in enumerate(content_d.xpath('.//div[@id="col1_jo"]//dl/dt')):
+            def getText(tag):
+                tag_texts = tag.xpath('text()').extract()
+                return '' if len(tag_texts) == 0 else tag_texts[0]
+            term_text = getText(term)
+            if 'localidad' in term_text.lower():
+                location = getText(content_d.xpath('.//div[@id="col1_jo"]//dl/dd[%d]' % (n+1)))
+                break
+        item['location'] = 'N/A' if location == '' else location
         desc = content_d.xpath('//div[@class="txt2_jo"]')
         #item['descText'] = '\n'.join(desc.xpath( 'pre//text()' ).extract())
         # TODO: Have a better "html->text" converter, to handle <i>C</i><i>ases</i> like this
