@@ -7,13 +7,23 @@ from selenium import webdriver
 import atexit
 
 class SeleniumDriverDownloader( object ):
-    def __init__(self):
-        self.driver = webdriver.Firefox()
+    def __init__(self, userAgent=None):
+        log.msg(format="SeleniumDownloader: Using user agent %(agent)r",
+                level=log.DEBUG, agent=userAgent)
+        caps = {}
+        if userAgent is not None:
+            caps['phantomjs.page.settings.userAgent'] = userAgent
+        self.driver = webdriver.PhantomJS(desired_capabilities=caps)
+        # Use cleanup to prevent a dangling browser process
         def _atexit_cleanup():
             log.msg("SeleniumDownloader: _atexit_cleanup", level=log.INFO)
             if self is not None :
                 SeleniumDriverDownloader.__del__(self)
         atexit.register(_atexit_cleanup)
+
+    @classmethod
+    def from_crawler(cls, crawler):
+        return cls(crawler.settings['USER_AGENT'])
 
     def __del__(self):
         log.msg("SeleniumDownloader: Bye!", level=log.INFO)
