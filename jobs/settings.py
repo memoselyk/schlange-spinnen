@@ -14,11 +14,15 @@ NEWSPIDER_MODULE = 'jobs.spiders'
 DOWNLOADER_MIDDLEWARES = {
     # Use enabled downloader, if required
     'jobs.middleware.SeleniumDriverDownloader': 990,
+    #'scrapy.contrib.downloadermiddleware.httpcache.HttpCacheMiddleware': 985,
 }
 
 ITEM_PIPELINES = {
     'jobs.pipelines.RssJobsFeedPipeline': 900,
 }
+
+#HTTPCACHE_POLICY = 'scrapy.contrib.httpcache.RFC2616Policy'
+#HTTPCACHE_ENABLED = True   # TODO: Enable Cache
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'jobs (+http://www.yourdomain.com)'
