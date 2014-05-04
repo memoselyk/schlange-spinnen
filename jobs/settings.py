@@ -16,6 +16,10 @@ DOWNLOADER_MIDDLEWARES = {
     'jobs.middleware.SeleniumDriverDownloader': 990,
 }
 
+ITEM_PIPELINES = {
+    'jobs.pipelines.RssJobsFeedPipeline': 900,
+}
+
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'jobs (+http://www.yourdomain.com)'
 USER_AGENT = 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/31.0.1650.63 Chrome/31.0.1650.63 Safari/537.36'
